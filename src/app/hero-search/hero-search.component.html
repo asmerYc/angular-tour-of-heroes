@@ -1,0 +1,21 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-08-21 11:06:05
+ * @LastEditTime: 2020-08-21 11:37:45
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /angular-tour-of-heroes/src/app/hero-search/hero-search.component.html
+-->
+<div id="search-component">
+  <h4><label for="search-box">Hero Search</label></h4>
+ 
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+ 
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async" >
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>
